@@ -18,11 +18,8 @@ import { BackToBlog } from '../BackToBlog';
 
 import {
   Wrapper,
-  AuthorDateContainer,
-  Author,
   ImgFullWrapper,
   ImgWrapper,
-  AuthorImg,
   ArticleCover,
   SharingIcons,
   Icon,
@@ -38,10 +35,8 @@ const commonExtLinkProps = {
 };
 
 export const ArticleHeader = ({
-  authorName,
   title,
   subtitle,
-  authorImg,
   coverImg,
   lastModified,
   lastModifiedText,
@@ -78,15 +73,6 @@ export const ArticleHeader = ({
             <Navigator recordId={category.id}>{category.title}</Navigator>
           </CategoryBox>
         )}
-        <AuthorDateContainer>
-          {authorName && (
-            <>
-              <Author>{authorName}</Author>
-              <Dot />
-            </>
-          )}
-          <Author as="time">{formattedDate}</Author>
-        </AuthorDateContainer>
         <ArticleTitle>{title}</ArticleTitle>
         <ArticleSubtitle>{subtitle}</ArticleSubtitle>
         <LastModified>
@@ -95,12 +81,6 @@ export const ArticleHeader = ({
       </Wrapper>
       <ImgFullWrapper $isRtl={isRtl}>
         <ImgWrapper>
-          <AuthorImg
-            as={!authorImg && 'div'}
-            style={{ visibility: !authorImg && 'hidden' }}
-            image={authorImg}
-            alt={authorName}
-          />
           <ArticleCover $isRtl={isRtl} image={coverImg} alt={title} />
         </ImgWrapper>
         <SharingIcons>

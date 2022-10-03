@@ -1,18 +1,15 @@
 import { useFormattedDate } from '../../../../hooks/useFormattedDate';
 
 import {
+  artDirectedCardImgs,
+  CardImg,
+  CardImgContainer,
   CardLink,
   CategoryBox,
   ContentWrapper,
-  PostTitle,
   Date,
   Excerpt,
-  AuthorCtaContainer,
-  AuthorContainer,
-  AuthorImg,
-  artDirectedCardImgs,
-  CardImgContainer,
-  CardImg,
+  PostTitle,
 } from './styles';
 
 export const ArticleCard = ({
@@ -20,8 +17,6 @@ export const ArticleCard = ({
   date,
   title,
   excerpt,
-  authorImg,
-  authorName,
   category,
   cardImg,
   cardImgMobile,
@@ -42,16 +37,6 @@ export const ArticleCard = ({
           <Date>{formattedDate}</Date>
           <PostTitle>{title}</PostTitle>
           <Excerpt>{excerpt}</Excerpt>
-          <AuthorCtaContainer>
-            <AuthorContainer>
-              <AuthorImg
-                objectFit="cover"
-                image={authorImg || ''}
-                alt={authorName || ''}
-              />
-              <Date as="address">{authorName}</Date>
-            </AuthorContainer>
-          </AuthorCtaContainer>
         </ContentWrapper>
       </CardLink>
     </article>

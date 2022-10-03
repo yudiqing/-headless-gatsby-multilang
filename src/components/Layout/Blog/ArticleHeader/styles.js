@@ -19,24 +19,7 @@ const Wrapper = styled.header`
   }
 `;
 
-const AuthorDateContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  column-gap: var(--gapSmall);
-  align-items: center;
-  width: max-content;
-`;
-
-const Author = styled.address`
-  font-size: var(--baseM);
-
-  @media (max-width: 768px) {
-    font-size: var(--baseMMobile);
-  }
-`;
-
 const ImgFullWrapper = styled.div`
-  --authorImgSize: 60px;
   --sharingIconSize: 35px;
   display: grid;
   width: max-content;
@@ -67,15 +50,6 @@ const ImgWrapper = styled.div`
   @media (max-width: 860px) {
     align-items: flex-start;
   }
-`;
-
-const AuthorImg = styled(GatsbyImage)`
-  height: var(--authorImgSize);
-  width: var(--authorImgSize);
-  border-radius: var(--authorImgSize);
-  border: 4px solid white;
-  z-index: 1;
-  position: relative;
 `;
 
 const ArticleCover = styled(GatsbyImage)`
@@ -203,11 +177,8 @@ const LastModified = styled.time`
 
 export {
   Wrapper,
-  AuthorDateContainer,
-  Author,
   ImgFullWrapper,
   ImgWrapper,
-  AuthorImg,
   ArticleCover,
   SharingIcons,
   Icon,

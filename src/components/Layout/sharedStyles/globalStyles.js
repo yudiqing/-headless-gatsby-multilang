@@ -5,6 +5,7 @@ import { easeOutTiming } from './animationStyles';
 export const GlobalStyle = createGlobalStyle`
     :root {
         --globalContainer: 1100px;
+        --globalWideContainer: 1640px;
         --articleContainer: 700px;
         --globalPaddingLr: 1.875rem; /* 30px */
         --globalPaddingTb: 3.75rem; /* 60px */
@@ -15,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
         --gapXL: 3.75rem; /* 60px */
         --borderRegular: 2px;
         --borderSmall: 1px;
-        --defaultStack: -apple-system, BlinkMacSystemFont, "Helvetica", "Helvetica Neue", "Arial", sans-serif;
+        --defaultStack: "Aileron", -apple-system, BlinkMacSystemFont, "Helvetica", "Helvetica Neue", "Arial", sans-serif;
         --defaultCodeStack: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Ubuntu Mono", "Roboto Mono", Menlo, Monaco, Consolas, monospace;
         --headingXXL: 3.25rem; /* 52px */
         --headingXL: 2.625rem;  /* 42px */

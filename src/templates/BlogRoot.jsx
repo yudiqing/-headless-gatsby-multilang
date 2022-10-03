@@ -27,7 +27,7 @@ const BlogRootTemplate = ({
     <CategoriesMenu />
     <SectionGridThreeCols>
       {blogPostNodes.map(
-        ({ id, meta: { updatedAt }, coverImage, title, subtitle, author }) => (
+        ({ id, meta: { updatedAt }, coverImage, title, subtitle }) => (
           <ArticleCard
             key={id}
             recordId={id}
@@ -37,9 +37,6 @@ const BlogRootTemplate = ({
             altImg={title}
             title={title}
             excerpt={subtitle}
-            authorImg={author?.picture.gatsbyImageData}
-            authorAltImg={author?.authorName}
-            authorName={author?.authorName}
           />
         )
       )}
@@ -86,12 +83,6 @@ export const query = graphql`
             height: 100
             imgixParams: { ar: "1", fit: "crop" }
           )
-        }
-        author {
-          authorName: name
-          picture {
-            gatsbyImageData(height: 30, width: 30, placeholder: NONE)
-          }
         }
       }
     }

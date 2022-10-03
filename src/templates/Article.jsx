@@ -24,7 +24,6 @@ const ArticleTemplate = ({
       structuredBody,
       title,
       subtitle,
-      author,
       seo,
       coverImage: { coverImageData },
       meta: { updatedAt, firstPublishedAt },
@@ -45,11 +44,8 @@ const ArticleTemplate = ({
       <ArticleHeader
         title={title}
         subtitle={subtitle}
-        authorName={author?.authorName}
         coverImg={coverImageData}
         coverImgAlt={title}
-        authorImg={author?.picture?.authorPictureData}
-        authorImgAlt={author?.authorName}
         firstPublish={firstPublishedAt}
         lastModified={updatedAt}
         lastModifiedText={updatedAtText}
@@ -120,10 +116,6 @@ const ArticleTemplate = ({
                 title: relatedTitle,
                 coverImage,
                 subtitle: relatedSubtitle,
-                author: {
-                  authorName,
-                  picture: { authorImageData },
-                },
                 categoryLink: relatedCategoryLink,
               }) => (
                 <ArticleCard
@@ -136,9 +128,6 @@ const ArticleTemplate = ({
                   altImg={relatedTitle}
                   title={relatedTitle}
                   excerpt={relatedSubtitle}
-                  authorImg={authorImageData}
-                  authorAltImg={authorName}
-                  authorName={authorName}
                 />
               )
             )}
@@ -184,12 +173,6 @@ export const query = graphql`
         title
         id: originalId
       }
-      author {
-        authorName: name
-        picture {
-          authorPictureData: gatsbyImageData(height: 60, width: 60)
-        }
-      }
       relatedPosts {
         id: originalId
         meta {
@@ -211,16 +194,6 @@ export const query = graphql`
             height: 100
             imgixParams: { ar: "1", fit: "crop" }
           )
-        }
-        author {
-          authorName: name
-          picture {
-            authorImageData: gatsbyImageData(
-              height: 30
-              width: 30
-              placeholder: NONE
-            )
-          }
         }
         subtitle
         title

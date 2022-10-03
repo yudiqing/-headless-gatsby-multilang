@@ -33,10 +33,6 @@ const CategoryTemplate = ({
             title,
             coverImage,
             subtitle,
-            author: {
-              authorName,
-              picture: { authorImageData },
-            },
             categoryLink,
           }) => (
             <ArticleCard
@@ -49,9 +45,6 @@ const CategoryTemplate = ({
               altImg={title}
               title={title}
               excerpt={subtitle}
-              authorImg={authorImageData}
-              authorAltImg={authorName}
-              authorName={authorName}
             />
           )
         )}
@@ -109,16 +102,6 @@ export const query = graphql`
             height: 100
             imgixParams: { ar: "1", fit: "crop" }
           )
-        }
-        author {
-          authorName: name
-          picture {
-            authorImageData: gatsbyImageData(
-              height: 30
-              width: 30
-              placeholder: NONE
-            )
-          }
         }
         subtitle
         title

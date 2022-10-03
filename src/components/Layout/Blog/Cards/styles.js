@@ -126,37 +126,6 @@ const Excerpt = styled.p`
   line-height: 1.3;
 `;
 
-const AuthorCtaContainer = styled.footer`
-  display: flex;
-  grid-template-columns: auto auto;
-  column-gap: var(--gapRegular);
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const AuthorContainer = styled.div`
-  --imgWidthHeight: 25px;
-  display: grid;
-  grid-template-columns: var(--imgWidthHeight) auto;
-  column-gap: var(--gapSmall);
-  align-items: center;
-
-  @media (max-width: 950px) {
-    --imgWidthHeight: 20px;
-    column-gap: calc(var(--gapSmall) - 0.33em);
-    grid-template-columns: var(--imgWidthHeight) auto;
-  }
-`;
-
-const AuthorImg = styled(GatsbyImage)`
-  width: var(--imgWidthHeight);
-  height: var(--imgWidthHeight);
-
-  & img {
-    border-radius: var(--imgWidthHeight);
-  }
-`;
-
 export {
   CardLink,
   CardImgContainer,
@@ -166,8 +135,5 @@ export {
   PostTitle,
   Date,
   Excerpt,
-  AuthorCtaContainer,
-  AuthorContainer,
-  AuthorImg,
   artDirectedCardImgs,
 };
